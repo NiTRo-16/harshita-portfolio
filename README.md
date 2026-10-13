@@ -12,6 +12,9 @@ A single-page website built with plain HTML, CSS and JavaScript. No build step a
   - Dementia Patient Support Platform
   - Expense Tracker
   - Hotel Management System
+- In-depth project write-ups with live animated previews (reminder phone, expense donut, hotel terminal)
+- Stats strip, "Decoding everyday tech" flip cards, approach steps and a journey timeline
+- Strengths and interests sections with a closing call to action
 - Cursor spotlight on tiles, click-to-copy email, and animated education rings
 - Responsive, and respects reduced-motion settings
 

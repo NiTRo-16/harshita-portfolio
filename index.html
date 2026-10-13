@@ -195,6 +195,153 @@ h3 em{font-weight:300}
 footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:var(--gap);padding:6px 6px 0;font-size:14px;color:var(--muted)}
 footer a:hover{color:var(--ink)}
 
+/* ===== Extended sections ===== */
+.more{display:grid;gap:var(--gap);margin-top:var(--gap)}
+.sec-title{display:flex;justify-content:space-between;align-items:flex-end;gap:12px 30px;flex-wrap:wrap;padding:clamp(22px,2.4vw,30px)}
+.sec-title h2{font-size:clamp(2rem,4.4vw,3.6rem);font-weight:700;letter-spacing:-.03em;line-height:1;margin:0;text-wrap:balance}
+.sec-title h2 em{font-weight:300}
+.sec-title p{margin:0;max-width:44ch;color:var(--ink-2)}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.stat{padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-height:160px}
+.stat b{font-size:clamp(2.6rem,5vw,4rem);font-weight:300;letter-spacing:-.04em;line-height:.9;font-variant-numeric:tabular-nums}
+.stat span{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.stat:nth-child(2){background:linear-gradient(160deg,rgba(248,183,173,.75),rgba(239,142,130,.6))}
+
+/* Case studies */
+.case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(20px,3vw,40px);padding:clamp(20px,2.6vw,34px);align-items:center}
+.case.flip .case-viz{order:2}
+.case-viz{position:relative;aspect-ratio:4/3.3;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.8)}
+.case .num{font-size:13px;letter-spacing:.14em;color:var(--muted)}
+.case h3{font-size:clamp(1.7rem,3vw,2.5rem);margin:6px 0 14px}
+.case .lede{margin:0 0 18px;color:var(--ink-2);font-size:1.05rem}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.fact{padding:14px 16px;border-radius:14px;background:var(--tile-2);border:1px solid rgba(255,255,255,.7)}
+.fact h4{margin:0 0 6px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.fact p,.fact ul{margin:0;font-size:15px;color:var(--ink-2)}
+.fact ul{padding-left:18px}
+.fact li{margin:2px 0}
+.fact.wide{grid-column:1/-1}
+
+/* phone viz */
+.cv-phone{background:linear-gradient(160deg,#ffe2dc,#f4b2a8);display:grid;place-items:center}
+.phone{width:min(220px,62%);aspect-ratio:9/17;border-radius:30px;background:rgba(255,255,255,.55);border:6px solid #fff;box-shadow:0 26px 50px rgba(200,100,90,.3);padding:34px 10px 12px;position:relative;overflow:hidden;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.phone::before{content:"";position:absolute;top:10px;left:50%;width:56px;height:6px;margin-left:-28px;border-radius:9px;background:rgba(31,21,21,.18)}
+.phone .clock{text-align:center;font-size:26px;font-weight:300;letter-spacing:-.02em;margin-bottom:10px}
+.notes{display:flex;flex-direction:column;gap:8px}
+.note{display:flex;gap:8px;align-items:center;padding:9px 10px;border-radius:14px;background:rgba(255,255,255,.9);box-shadow:0 6px 14px rgba(200,100,90,.15);font-size:12px;line-height:1.25;animation:slideIn .7s cubic-bezier(.2,.8,.2,1) both}
+.note i{width:26px;height:26px;flex:none;border-radius:8px;display:grid;place-items:center;font-style:normal;font-size:14px;background:var(--tile)}
+.note small{display:block;color:var(--muted);font-size:10.5px}
+@keyframes slideIn{from{transform:translateY(-14px) scale(.96);opacity:.0001}}
+
+/* donut viz */
+.cv-donut{background:linear-gradient(160deg,#fff3ee,#f9cfc4);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:10px;padding:20px}
+.donut{position:relative;width:100%;max-width:190px;aspect-ratio:1;justify-self:center}
+.donut svg{width:100%;height:100%;transform:rotate(-90deg)}
+.donut circle{fill:none;stroke-width:16;transition:stroke-dasharray 1.2s cubic-bezier(.2,.8,.2,1),stroke-dashoffset 1.2s cubic-bezier(.2,.8,.2,1)}
+.donut .ctr{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.donut .ctr b{font-size:20px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.donut .ctr small{font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.txns{display:flex;flex-direction:column;gap:7px;min-width:0}
+.txn{display:flex;justify-content:space-between;gap:8px;padding:8px 10px;border-radius:12px;background:rgba(255,255,255,.85);font-size:12.5px;animation:slideIn .6s cubic-bezier(.2,.8,.2,1) both}
+.txn span:first-child{display:flex;align-items:center;gap:7px;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.txn i{width:9px;height:9px;border-radius:50%;flex:none}
+.txn b{font-variant-numeric:tabular-nums;font-weight:600}
+
+/* terminal viz */
+.cv-term{background:#2a1c1b;padding:16px 18px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;line-height:1.7;color:#ffd9d2}
+.cv-term .bar{display:flex;gap:6px;margin-bottom:12px}
+.cv-term .bar i{width:10px;height:10px;border-radius:50%;background:#5a3c39}
+.cv-term .bar i:first-child{background:var(--coral-2)}
+.cv-term pre{margin:0;white-space:pre-wrap;word-break:break-word;font:inherit}
+.cv-term .k{color:#f6aa9f}.cv-term .g{color:#b9e6c3}.cv-term .m{color:#a88b87}
+.caret{display:inline-block;width:7px;height:14px;background:#ffd9d2;vertical-align:-2px;animation:blinkc 1s steps(2,jump-none) infinite}
+@keyframes blinkc{50%{opacity:0}}
+
+/* Flip cards */
+.decode{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.fc{display:block;perspective:1200px;min-height:230px;cursor:pointer;width:100%}
+.fc-in{position:relative;height:100%;min-height:230px;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.fc.on .fc-in{transform:rotateY(180deg)}
+@media (hover:hover){.fc:hover .fc-in{transform:rotateY(180deg)}}
+.fc-face{position:absolute;inset:0;border-radius:var(--r);padding:22px;display:flex;flex-direction:column;justify-content:space-between;-webkit-backface-visibility:hidden;backface-visibility:hidden;border:1px solid rgba(255,255,255,.7);box-shadow:0 14px 40px rgba(170,90,80,.08);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);text-align:left}
+.fc-front{background:var(--tile)}
+.fc-back{background:linear-gradient(160deg,rgba(248,183,173,.9),rgba(239,142,130,.85));transform:rotateY(180deg)}
+.fc-front .ico{font-size:34px;line-height:1}
+.fc-front b{font-size:1.35rem;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+.fc-front small,.fc-back small{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.fc-back p{margin:0;font-size:15.5px;line-height:1.5}
+.fc-back b{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+
+/* Approach */
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.step{padding:24px;display:flex;flex-direction:column;gap:14px;min-height:220px}
+.step .n{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:600;background:#fff;box-shadow:0 8px 20px rgba(200,100,90,.18);position:relative}
+.step .n::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px dashed var(--coral-2);animation:spin 12s linear infinite}
+.step h4{margin:0;font-size:1.35rem;font-weight:600;letter-spacing:-.01em}
+.step p{margin:0;color:var(--ink-2);font-size:15.5px}
+.flowline{position:absolute;left:6%;right:6%;top:46px;height:2px;z-index:-1;background:linear-gradient(90deg,transparent,var(--coral-2),transparent);background-size:40% 100%;background-repeat:no-repeat;animation:flowx 3.5s linear infinite;opacity:.8}
+@keyframes flowx{from{background-position:-40% 0}to{background-position:140% 0}}
+
+/* Journey */
+.journey{padding:clamp(22px,2.6vw,34px)}
+.tline{position:relative;display:grid;gap:14px;padding-left:40px;margin-top:6px}
+.tline::before{content:"";position:absolute;left:13px;top:8px;bottom:8px;width:2px;border-radius:2px;background:linear-gradient(var(--coral-2),rgba(239,142,130,.15))}
+.tl-item{position:relative;padding:16px 18px;border-radius:16px;background:var(--tile-2);border:1px solid rgba(255,255,255,.7);transition:transform .4s}
+.tl-item:hover{transform:translateX(6px)}
+.tl-item::before{content:"";position:absolute;left:-33px;top:22px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--coral-2);box-shadow:0 0 0 6px rgba(239,142,130,.18)}
+.tl-item .when{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.tl-item h4{margin:4px 0 4px;font-size:1.15rem;font-weight:600}
+.tl-item p{margin:0;color:var(--ink-2);font-size:15px}
+.tl-item.future{border-style:dashed;background:transparent}
+.tl-item.future::before{background:var(--coral-2);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(239,142,130,.5)}80%,100%{box-shadow:0 0 0 12px rgba(239,142,130,0)}}
+
+/* Strengths + reading */
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--gap)}
+.strengths{padding:clamp(22px,2.6vw,34px)}
+.str{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;padding:14px 0;border-top:1px solid var(--line)}
+.str:first-of-type{border-top:0}
+.str .ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#fff;box-shadow:0 6px 16px rgba(200,100,90,.15);color:var(--rose)}
+.str .ic svg{width:22px;height:22px}
+.str h4{margin:0 0 2px;font-size:1.1rem;font-weight:600}
+.str p{margin:0;color:var(--ink-2);font-size:15px}
+.essay{padding:clamp(22px,2.6vw,34px);background:linear-gradient(160deg,rgba(255,236,232,.7),rgba(246,170,159,.45));display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.essay p{margin:0 0 12px;color:var(--ink-2);font-size:1.05rem}
+.essay .pull{font-size:clamp(1.4rem,2.6vw,2rem);font-style:italic;font-weight:300;line-height:1.25;color:var(--ink);margin:0}
+.books{display:flex;gap:8px;align-items:flex-end;height:70px}
+.books i{display:block;width:16px;border-radius:3px 3px 1px 1px;background:var(--coral-2);animation:lean 5s ease-in-out infinite;transform-origin:bottom}
+.books i:nth-child(2){background:#f6c1b8;height:56px;animation-delay:.4s}.books i:nth-child(3){background:var(--rose);height:66px;animation-delay:.8s}.books i:nth-child(4){background:#fff;height:48px;animation-delay:1.2s}.books i:nth-child(1){height:60px}
+@keyframes lean{50%{transform:rotate(-6deg)}}
+
+/* Final CTA */
+.cta{padding:clamp(30px,5vw,64px);text-align:center;background:linear-gradient(160deg,rgba(248,183,173,.85),rgba(239,142,130,.8))}
+.cta h2{font-size:clamp(2.2rem,6vw,5rem);font-weight:400;letter-spacing:-.035em;line-height:1.02;margin:0 auto;max-width:16ch;text-wrap:balance}
+.cta h2 em{font-weight:300}
+.cta p{margin:16px auto 0;max-width:50ch;color:var(--ink)}
+.cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
+.pillbtn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;font-weight:600;font-size:15px;background:var(--ink);color:#fff;transition:transform .3s,background .3s}
+.pillbtn:hover{transform:translateY(-2px);background:#3b2726}
+.pillbtn.alt{background:rgba(255,255,255,.7);color:var(--ink);border:1px solid rgba(255,255,255,.9)}
+.pillbtn.alt:hover{background:#fff}
+.cta::before{content:"";position:absolute;z-index:-1;width:120%;aspect-ratio:1;left:-10%;top:55%;border-radius:43%;background:rgba(255,255,255,.2);animation:wave 18s linear infinite}
+
+@media (max-width:1060px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .case,.case.flip{grid-template-columns:1fr}.case.flip .case-viz{order:0}
+  .decode{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}.flowline{display:none}
+  .duo{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .facts{grid-template-columns:1fr}
+  .decode,.steps{grid-template-columns:1fr}
+  .cv-donut{grid-template-columns:1fr;padding:14px}
+  .donut{max-width:140px}
+  .case-viz{aspect-ratio:4/4.4}
+}
+
 /* Reveal */
 .rv{transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
 .rv.pre{opacity:.2;transform:translateY(30px) scale(.98)}
@@ -232,7 +379,7 @@ footer a:hover{color:var(--ink)}
 
 <header class="tile top" id="top">
   <a class="logo" href="#top"><i>HARSHITA</i> GUPTA</a>
-  <nav aria-label="Main"><a href="#projects">PROJECTS</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></nav>
+  <nav aria-label="Main"><a href="#projects">PROJECTS</a><a href="#about">ABOUT</a><a href="#journey">JOURNEY</a><a href="#contact">CONTACT</a></nav>
 </header>
 
 <main class="bento">
@@ -364,7 +511,196 @@ footer a:hover{color:var(--ink)}
   </section>
 </main>
 
+<div class="more">
+  <!-- Stats -->
+  <section class="stats" aria-label="Highlights">
+    <div class="tile stat rv"><b data-count="3">3</b><span>Projects built</span></div>
+    <div class="tile stat rv"><b data-count="94" data-suf="%">94%</b><span>Class X, CBSE</span></div>
+    <div class="tile stat rv"><b data-count="90" data-suf="%">90%</b><span>Class XII, CBSE</span></div>
+    <div class="tile stat rv"><b data-count="2028">2028</b><span>Graduating, B.Tech</span></div>
+  </section>
+
+  <!-- Case studies -->
+  <section class="tile sec-title rv" id="work">
+    <h2>Projects, <em>up close</em></h2>
+    <p>A closer look at what each project does, how it was built and what it taught me.</p>
+  </section>
+
+  <article class="tile case rv">
+    <div class="case-viz cv-phone" aria-hidden="true">
+      <div class="phone"><div class="clock" id="pclock">9:00</div><div class="notes" id="notes"></div></div>
+    </div>
+    <div>
+      <span class="num">01 · TEAM PROJECT</span>
+      <h3>Dementia Patient Support Platform</h3>
+      <p class="lede">People living with dementia often struggle with memory and daily routines, and the people caring for them carry a lot of that load. This platform aims to make everyday care calmer and more organised for both.</p>
+      <div class="facts">
+        <div class="fact"><h4>The idea</h4><p>An accessible digital assistant for routines and care, designed to be simple enough for patients and useful for caregivers.</p></div>
+        <div class="fact"><h4>Important</h4><p>It's a support tool, not a medical or diagnostic system, and it doesn't replace doctors.</p></div>
+        <div class="fact wide"><h4>Planned features</h4><ul><li>Daily routine management and gentle reminders</li><li>Caregiver support and appointment tracking</li><li>Patient information kept in one place</li></ul></div>
+      </div>
+      <div class="tags"><span class="tag">With Krishna Verma</span><span class="tag">Accessibility</span><span class="tag">Healthcare support</span><span class="tag soon">Tech stack being finalised</span></div>
+    </div>
+  </article>
+
+  <article class="tile case flip rv">
+    <div class="case-viz cv-donut" aria-hidden="true">
+      <div class="donut"><svg viewBox="0 0 120 120" id="donut"></svg><div class="ctr"><b id="dtotal">₹0</b><small>This month</small></div></div>
+      <div class="txns" id="txns"></div>
+    </div>
+    <div>
+      <span class="num">02 · PERSONAL PROJECT</span>
+      <h3>Expense Tracker</h3>
+      <p class="lede">Small daily spends add up without anyone noticing. This app records each expense and turns them into a clear picture of where the money goes.</p>
+      <div class="facts">
+        <div class="fact"><h4>What it does</h4><p>Lets you log expenses with an amount and category, then see totals at a glance.</p></div>
+        <div class="fact"><h4>Why I built it</h4><p>To solve a real everyday problem: budgeting that feels simple instead of stressful.</p></div>
+        <div class="fact wide"><h4>What I learned</h4><p>Organising data cleanly and turning raw numbers into a summary that's easy to understand.</p></div>
+      </div>
+      <div class="tags"><span class="tag">Personal finance</span><span class="tag">Data handling</span></div>
+    </div>
+  </article>
+
+  <article class="tile case rv">
+    <div class="case-viz cv-term" aria-hidden="true">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <pre id="term"></pre>
+    </div>
+    <div>
+      <span class="num">03 · PYTHON + MYSQL</span>
+      <h3>Hotel Management System</h3>
+      <p class="lede">A program that handles the day-to-day work of a hotel front desk, with all records stored in a MySQL database instead of paper registers.</p>
+      <div class="facts">
+        <div class="fact"><h4>What it does</h4><p>Manages rooms, guest bookings and billing from a simple menu-driven interface.</p></div>
+        <div class="fact"><h4>Built with</h4><p>Python for the program logic and MySQL for storing guests, rooms and bookings.</p></div>
+        <div class="fact wide"><h4>What I learned</h4><p>Connecting Python to a database, designing tables, and writing SQL queries to insert, update and fetch records.</p></div>
+      </div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">MySQL</span><span class="tag">Database design</span></div>
+    </div>
+  </article>
+
+  <!-- Decoding everyday tech -->
+  <section class="tile sec-title rv" id="decode">
+    <h2>Decoding <em>everyday</em> tech</h2>
+    <p>The kind of questions I love asking. Hover or tap a card to see the technology behind it.</p>
+  </section>
+  <section class="decode" aria-label="Everyday technology">
+    <button class="fc rv" type="button"><span class="fc-in"><span class="fc-face fc-front"><span class="ico">📱</span><span><small>Everyday moment</small><b>Paying with a QR code</b></span></span><span class="fc-face fc-back"><b>Behind it</b><p>The QR code stores payment details as a pattern of squares, with extra error-correction data so it still scans when partly damaged. The payment itself travels over encrypted connections between banks.</p></span></span></button>
+    <button class="fc rv" type="button"><span class="fc-in"><span class="fc-face fc-front"><span class="ico">🗺️</span><span><small>Everyday moment</small><b>Finding the fastest route</b></span></span><span class="fc-face fc-back"><b>Behind it</b><p>Maps treat roads as a graph of points and connections. Shortest-path algorithms such as Dijkstra's, combined with live traffic data, pick the quickest way.</p></span></span></button>
+    <button class="fc rv" type="button"><span class="fc-in"><span class="fc-face fc-front"><span class="ico">🎬</span><span><small>Everyday moment</small><b>"You might also like…"</b></span></span><span class="fc-face fc-back"><b>Behind it</b><p>Recommendation systems use machine learning to find patterns in what similar people watched or bought, then predict what you're likely to enjoy next.</p></span></span></button>
+    <button class="fc rv" type="button"><span class="fc-in"><span class="fc-face fc-front"><span class="ico">🙂</span><span><small>Everyday moment</small><b>Unlocking a phone with your face</b></span></span><span class="fc-face fc-back"><b>Behind it</b><p>The phone maps key points of your face and turns them into numbers. A trained model compares those numbers to the stored ones and unlocks only on a close match.</p></span></span></button>
+    <button class="fc rv" type="button"><span class="fc-in"><span class="fc-face fc-front"><span class="ico">⌨️</span><span><small>Everyday moment</small><b>Autocorrect fixing a typo</b></span></span><span class="fc-face fc-back"><b>Behind it</b><p>It measures how many edits separate your word from real words, then uses a language model to choose the one that fits the sentence best.</p></span></span></button>
+    <button class="fc rv" type="button"><span class="fc-in"><span class="fc-face fc-front"><span class="ico">🛗</span><span><small>Everyday moment</small><b>Calling a lift</b></span></span><span class="fc-face fc-back"><b>Behind it</b><p>A scheduling algorithm decides which lift answers and in what order it stops, trying to keep everyone's waiting time short. It's a classic computer science problem.</p></span></span></button>
+  </section>
+
+  <!-- Approach -->
+  <section class="tile sec-title rv">
+    <h2>How I <em>approach</em> things</h2>
+    <p>Looking at the world from an engineer's point of view comes down to four habits.</p>
+  </section>
+  <section class="steps" aria-label="Approach">
+    <span class="flowline" aria-hidden="true"></span>
+    <div class="tile step rv"><span class="n">01</span><h4>Observe</h4><p>Notice the everyday things most people take for granted, from apps to machines.</p></div>
+    <div class="tile step rv"><span class="n">02</span><h4>Question</h4><p>Ask how it actually works, and which technology makes it possible.</p></div>
+    <div class="tile step rv"><span class="n">03</span><h4>Build</h4><p>Turn what I learn into projects that make someone's life a little easier.</p></div>
+    <div class="tile step rv"><span class="n">04</span><h4>Explain</h4><p>Share it in simple words, because if I can explain it, I truly understand it.</p></div>
+  </section>
+
+  <!-- Journey -->
+  <section class="tile journey rv" id="journey">
+    <p class="label">Journey</p>
+    <h3>How I got <em>here</em></h3>
+    <div class="tline">
+      <div class="tl-item"><span class="when">School</span><h4>Strong academic base</h4><p>94% in Class X at Carmel Convent Sr. Sec. School, Amlai, and 90% in Class XII at Kendriya Vidyalaya, Dhanpuri (CBSE).</p></div>
+      <div class="tl-item"><span class="when">2024</span><h4>Started B.Tech CSE (AI &amp; ML)</h4><p>Joined the Institute of Engineering &amp; Science, IPS Academy, Indore, affiliated to RGPV.</p></div>
+      <div class="tl-item"><span class="when">Foundations</span><h4>Learning to think in code</h4><p>Built programming fundamentals with C and C++, then moved on to Python and Java basics.</p></div>
+      <div class="tl-item"><span class="when">First builds</span><h4>From code to real tools</h4><p>Put Python and MySQL to work in a Hotel Management System, and built an Expense Tracker for everyday budgeting.</p></div>
+      <div class="tl-item"><span class="when">Now · 3rd year</span><h4>Building for people</h4><p>Working with Krishna Verma on a Dementia Patient Support Platform, while going deeper into AI and ML.</p></div>
+      <div class="tl-item future"><span class="when">2028</span><h4>Graduation, and what's next</h4><p>Aiming to build technology that makes everyday life easier for people.</p></div>
+    </div>
+  </section>
+
+  <!-- Strengths + reading -->
+  <section class="duo">
+    <div class="tile strengths rv">
+      <p class="label">What I bring</p>
+      <h3>Strengths on a <em>team</em></h3>
+      <div class="str"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span><div><h4>Speaking</h4><p>Comfortable presenting ideas and projects in front of people.</p></div></div>
+      <div class="str"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2 1-4 3-4.5 2 .5 3 2.5 3 4.5"/></svg></span><div><h4>Teamwork</h4><p>Enjoys building together, like the dementia platform with a classmate.</p></div></div>
+      <div class="str"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg></span><div><h4>Clear explanations</h4><p>Good at breaking complex ideas into simple, easy-to-follow steps.</p></div></div>
+      <div class="str"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><div><h4>Curiosity</h4><p>Always asking what's behind the things we use every day.</p></div></div>
+    </div>
+    <div class="tile essay rv">
+      <div>
+        <p class="label">Why literature &amp; psychology?</p>
+        <h3>Understanding <em>people</em>, not just code</h3>
+        <p>Literature trains me to see a situation from someone else's eyes. Psychology helps me understand why people think and act the way they do.</p>
+        <p>Both make me a better engineer, because good technology starts with understanding the person who will use it. That's exactly why a project like the dementia platform matters to me.</p>
+      </div>
+      <div><div class="books" aria-hidden="true"><i></i><i></i><i></i><i></i></div><p class="pull">"Build for people first. The technology comes second."</p></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="tile cta rv">
+    <p class="label" style="color:var(--ink)">Let's talk</p>
+    <h2>Let's build something that makes <em>life easier</em></h2>
+    <p>Open to internships, team projects and conversations about technology, literature or psychology.</p>
+    <div class="cta-row">
+      <button class="pillbtn" type="button" id="copy3">Copy email</button>
+      <a class="pillbtn alt" href="https://www.linkedin.com/in/harshita-gupta-80743732a" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    <p style="margin-top:14px;font-size:15px;-webkit-user-select:all;user-select:all" id="mail3">harshita2508gupta@gmail.com</p>
+  </section>
+</div>
+
 <footer><span>© 2026 Harshita Gupta</span><span>Indore, India</span></footer>
+
+<script>
+(()=>{
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const onVisible=(el,fn)=>{const io=new IntersectionObserver(es=>{if(es[0].isIntersecting){io.disconnect();fn()}},{threshold:.35});io.observe(el)};
+
+/* Stats count-up */
+$$('.stat b[data-count]').forEach(el=>{if(RM)return;const to=+el.dataset.count,suf=el.dataset.suf||'',from=to>1000?to-25:0;onVisible(el,()=>{const t0=performance.now();const step=n=>{const k=Math.min(1,(n-t0)/1400);el.textContent=Math.round(from+(to-from)*(1-Math.pow(1-k,3)))+suf;if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)})});
+
+/* Phone reminders */
+const NOTES=[['💊','Morning medicine','9:00 AM · Reminder'],['🚶','Short walk with family','10:30 AM · Routine'],['🍲','Lunch time','1:00 PM · Routine'],['📅','Doctor appointment','Thu, 4:00 PM'],['📞','Call from caregiver','6:00 PM · Check-in'],['🌙','Evening medicine','8:30 PM · Reminder']];
+const notes=$('#notes'),pclock=$('#pclock');let ni=0;
+function pushNote(){const [ic,t,s]=NOTES[ni%NOTES.length];pclock.textContent=s.split(' · ')[0].replace(/^Thu, /,'');const d=document.createElement('div');d.className='note';d.innerHTML=`<i>${ic}</i><span>${t}<small>${s}</small></span>`;notes.prepend(d);while(notes.children.length>4)notes.lastChild.remove();ni++}
+for(let i=0;i<3;i++)pushNote();
+if(!RM)setInterval(pushNote,2600);
+
+/* Expense donut */
+const CATS=[['Food','#e9776c'],['Travel','#f6aa9f'],['Books','#c9706a'],['Fun','#ffd3c8']];
+const TX=[['Food','Canteen lunch',80],['Travel','Auto ride',60],['Books','Notebook set',150],['Fun','Movie night',250],['Food','Chai & snacks',40],['Travel','Bus pass top-up',200],['Books','Reference book',320],['Food','Groceries',410]];
+const totals={Food:0,Travel:0,Books:0,Fun:0};const donut=$('#donut'),txns=$('#txns'),dtotal=$('#dtotal');const C=2*Math.PI*44;
+donut.innerHTML=`<circle cx="60" cy="60" r="44" stroke="rgba(233,119,108,.12)"/>`+CATS.map(([c,col])=>`<circle data-c="${c}" cx="60" cy="60" r="44" stroke="${col}" stroke-dasharray="0 ${C}"/>`).join('');
+let ti=0;
+function addTx(){const [cat,name,amt]=TX[ti%TX.length];ti++;totals[cat]+=amt;const sum=Object.values(totals).reduce((a,b)=>a+b,0);let off=0;CATS.forEach(([c])=>{const len=sum?totals[c]/sum*C:0;const el=donut.querySelector(`[data-c="${c}"]`);el.style.strokeDasharray=`${Math.max(0,len-2)} ${C}`;el.style.strokeDashoffset=-off;off+=len});dtotal.textContent='₹'+sum.toLocaleString('en-IN');const col=CATS.find(x=>x[0]===cat)[1];const d=document.createElement('div');d.className='txn';d.innerHTML=`<span><i style="background:${col}"></i>${name}</span><b>₹${amt}</b>`;txns.prepend(d);while(txns.children.length>4)txns.lastChild.remove();if(ti%TX.length===0)Object.keys(totals).forEach(k=>totals[k]=0)}
+for(let i=0;i<4;i++)addTx();
+if(!RM)setInterval(addTx,2400);
+
+/* Terminal */
+const SCRIPT=[
+ ['m','$ python hotel.py'],['','=== HOTEL MANAGEMENT ==='],['','1. Book a room   2. Check in'],['','3. Check out     4. Show bill'],['k','> Enter choice: 1'],['','Guest name: A. Sharma'],['','Room type (Deluxe/Suite): Deluxe'],['g','✓ Room 204 booked for 2 nights'],['m','INSERT INTO bookings (guest, room, nights)'],['m','VALUES (\'A. Sharma\', 204, 2);'],['k','> Enter choice: 4'],['g','Bill for Room 204: ₹6,400']
+];
+const term=$('#term');
+const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+async function runTerm(){const sleep=ms=>new Promise(r=>setTimeout(r,ms));for(;;){let html='';for(const [cls,line] of SCRIPT){for(let i=1;i<=line.length;i++){term.innerHTML=html+`<span class="${cls}">${esc(line.slice(0,i))}</span><span class="caret"></span>`;await sleep(cls==='m'||cls===''?14:28)}html+=`<span class="${cls}">${esc(line)}</span>\n`;await sleep(260)}term.innerHTML=html+'<span class="caret"></span>';await sleep(3500)}}
+if(RM){term.innerHTML=SCRIPT.map(([c,l])=>`<span class="${c}">${esc(l)}</span>`).join('\n')}else onVisible(term,runTerm);
+
+/* Flip cards (tap on touch) */
+$$('.fc').forEach(f=>f.addEventListener('click',()=>f.classList.toggle('on')));
+
+/* Spotlight on new tiles */
+if(!RM&&matchMedia('(pointer:fine)').matches){$$('.more .tile').forEach(t=>t.addEventListener('pointermove',e=>{const r=t.getBoundingClientRect();t.style.setProperty('--x',(e.clientX-r.left)+'px');t.style.setProperty('--y',(e.clientY-r.top)+'px')}))}
+
+/* Copy email (CTA) */
+const b=$('#copy3');b.addEventListener('click',()=>{const done=m=>{b.textContent=m;setTimeout(()=>b.textContent='Copy email',2200)};const sel=()=>{const r=document.createRange();r.selectNodeContents($('#mail3'));const s=getSelection();s.removeAllRanges();s.addRange(r);done('Selected, press Ctrl+C')};try{navigator.clipboard.writeText('harshita2508gupta@gmail.com').then(()=>done('Copied ✓'),sel)}catch(e){sel()}});
+})();
+</script>
 
 <script>
 (()=>{
