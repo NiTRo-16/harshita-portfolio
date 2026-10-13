@@ -9,7 +9,7 @@ A single-page website built with plain HTML, CSS and JavaScript. No build step a
 - Blush-pink glass bento layout over slowly drifting color blobs
 - Animated glass orb emblem with rotating line-art lotus rings
 - Auto-cycling project accordion with animated previews:
-  - Dementia Care Project
+  - Dementia Patient Support Platform
   - Expense Tracker
   - Hotel Management System
 - Cursor spotlight on tiles, click-to-copy email, and animated education rings
